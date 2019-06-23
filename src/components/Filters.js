@@ -2,9 +2,6 @@ import React from 'react'
 
 class Filters extends React.Component {
 
-
-
-
   render() {
     return (
       <div className="ui form">
@@ -13,7 +10,7 @@ class Filters extends React.Component {
           <select
             name="type"
             id="type"
-            onChange={event => this.changeType(event)}
+            onChange={event => this.props.onChangeType(event)}
             >
             <option value="all">All</option>
             <option value="cat">Cats</option>
@@ -23,7 +20,12 @@ class Filters extends React.Component {
         </div>
 
         <div className="field">
-          <button className="ui secondary button">Find pets</button>
+          <button
+            className="ui secondary button"
+            onClick={this.props.onFindPetsClick}
+          >
+            Find pets
+          </button>
         </div>
       </div>
     )
